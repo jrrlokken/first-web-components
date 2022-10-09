@@ -1,0 +1,49 @@
+:host {
+  font-family: san-serif;
+  border: 2px solid var(--color-primary, purple);
+  margin: 2rem;
+  padding: 1rem;
+  display: block;
+  width: 20rem;
+  max-width: 100%;
+}
+
+:host(.error) {
+  border-color: var(--color-error, red);
+}
+
+form input {
+  font: inherit;
+  color: var(--color-primary, purple);
+  margin-bottom: 0.5rem;
+  padding: 0.1rem 0.25rem;
+  display: block;
+}
+
+form input:focus,
+form button:focus {
+  outline: none;
+}
+
+form button {
+  font: inherit;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid purple;
+  background: var(--color-primary, purple);
+  color: var(--color-primary-inverse, white);
+  cursor: pointer;
+}
+
+form button:hover,
+form button:active {
+  background: var(--color-primary-highlight, hotpink);
+  border-color: var(--color-primary-highlight, hotpink);
+  outline: none;
+}
+
+form button:disabled {
+  background: var(--color-disabled, grey);
+  border-color: #aaa;
+  color: #666;
+  cursor: not-allowed;
+}

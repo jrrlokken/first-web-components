@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal Web Component</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+        margin: 2rem;
+      }
+    </style>
+    <script src="modal.js"></script>
+  </head>
+  <body>
+    <my-modal>
+      <h1 slot="title">Please Confirm Payment</h1>
+      <p slot="main">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+        voluptates, quod, quia, voluptate quae voluptatem quibusdam
+        necessitatibus quidem voluptatum quos nesciunt. Quisquam, quae
+        voluptates. Quisquam, quae voluptates. Quisquam, quae voluptates.
+      </p>
+    </my-modal>
+    <p>Please confirm</p>
+    <button id="confirm-btn">Confirm</button>
+    <script>
+      const modal = document.querySelector('my-modal');
+      modal.addEventListener('cancel', () => {
+        console.log('cancel');
+      });
+      modal.addEventListener('confirm', () => {
+        console.log('confirm');
+      });
+
+      const confirmBtn = document.getElementById('confirm-btn');
+      confirmBtn.addEventListener('click', () => {
+        // modal.setAttribute('open', '');
+        modal.open();
+      });
+    </script>
+  </body>
+</html>
